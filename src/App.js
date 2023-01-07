@@ -1,22 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import search from './call';
 
-function App() {
+async function App() {
+  const pachinko = await search('pachinko');
+  const results = [];
+  pachinko.forEach((result) => {
+    results.push(result);
+  });
+  pachinko.forEach((result) => {
+    console.log(result.title);
+  })
+  const testTitle = pachinko[0].title;
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {testTitle}
       </header>
     </div>
   );
